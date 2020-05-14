@@ -10,6 +10,31 @@
   </head>
 
   <body>
+    <header>
+      <div class="header-logo">
+        <%= link_to "Top","/" %>
+      </div>
+      <ul>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to "dreams", "#" %>
+          </li>
+          <li>
+            <%= link_to "logout", "#" %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "dreams", "#" %>
+          </li>
+          <li>
+            <%= link_to "login", "#" %>
+          </li>
+          <li>
+            <%= link_to "signup", "#" %>
+          </li>
+        <% end %>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>

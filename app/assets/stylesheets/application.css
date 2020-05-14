@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+ header {
+   padding: 15px;
+   margin: 0;
+   height: 60px;
+   background-color: #9A9A9A;
+ }
+
+ .header-logo {
+   font-size: 40px;
+   font-family: HiraMinProN-W6;
+   float: left;
+   margin-left: 5px;
+ }
+
+ ul {
+   float: right;
+ }
+
+ li {
+   float: left;
+   margin-right: 40px;
+   font-size: 30px;
+   display: inline;
+   color: #000000;
+   font-family: Hiragino Mincho ProN;
+ }
