@@ -20,17 +20,21 @@
             <%= link_to "dreams", "#" %>
           </li>
           <li>
-            <%= link_to "logout", "#" %>
+            <%= link_to "logout", destroy_user_session_path, method: :delete %>
+          </li>
+          <li>
+          <%# URLはshowにする %>
+            <%= link_to "ようこそ#{current_user.name}さん", "#" %>
           </li>
         <% else %>
           <li>
             <%= link_to "dreams", "#" %>
           </li>
           <li>
-            <%= link_to "login", "#" %>
+            <%= link_to "login", new_user_session_path %>
           </li>
           <li>
-            <%= link_to "signup", "#" %>
+            <%= link_to "signup", new_user_registration_path %>
           </li>
         <% end %>
       </ul>
