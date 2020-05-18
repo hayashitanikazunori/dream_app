@@ -24,7 +24,7 @@
           </li>
           <li>
           <%# URLはshowにする %>
-            <%= link_to "ようこそ#{current_user.name}さん", "#" %>
+            <%= link_to "ようこそ#{current_user.name}さん", "/users/#{current_user.id}" %>
           </li>
         <% else %>
           <li>
