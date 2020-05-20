@@ -1,0 +1,6 @@
+<h2>新規投稿画面</h2>
+<%= form_with model: @post, local: true do |f| %>
+  <%= f.text_area :comment %><br>
+  <%= f.file_field :image %><br>
+  <%= f.submit %>
+<% end %>
