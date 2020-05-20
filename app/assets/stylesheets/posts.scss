@@ -2,6 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.content {
-  
+h1 {
+  text-align: center;
+  color: #00AA00
 }
+
+
+.new {
+  width: 150px;
+  height: 50px;
+}
+
+.new-btn {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em
+}
+
+ul{
+  width: 352px;
+  list-style: none outside;
+  }
+
+  li{
+  padding: 0;
+  float: left;
+  width: 176px;
+  }
+
+.image {
+  width: 200px;
+  }

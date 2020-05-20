@@ -1,12 +1,18 @@
 <h1>投稿一覧</h1>
-<button type="button" class="btn btn-secondary"><%= link_to("新規投稿", "/posts/new") %></button><br>
+<div class="new-btn">
+  <button type="button" class="btn new btn-secondary" onclick="location.href='/posts/new'">新規投稿</button>
+</div>
 <div class="content">
   <% @posts.each do |post| %>
-  <div class="comment">
-    <%= post.comment %>
-   </div>
-   <div class="image">
-     <%= image_tag post.image %>
-    </div>
+  <ul>
+    <li>
+      <div class="image">
+        <%= image_tag post.image, size: '100x200' %>
+      </div>
+      <div class="comment">
+        <%= post.comment %>
+      </div>
+    </li>
+  </ul>
   <% end %>
 </div>
