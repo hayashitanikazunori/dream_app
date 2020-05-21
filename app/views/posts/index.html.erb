@@ -2,17 +2,18 @@
 <div class="new-btn">
   <button type="button" class="btn new btn-secondary" onclick="location.href='/posts/new'">新規投稿</button>
 </div>
-<div class="content">
+<div class="items">
   <% @posts.each do |post| %>
-  <ul>
-    <li>
-      <div class="image">
-        <%= image_tag post.image, size: '100x200' %>
+    <div class="item">
+      <div class="item-image">
+       <%= image_tag post.image, size: '200x200' %>
       </div>
-      <div class="comment">
-        <%= post.comment %>
+      <div class="item-body">
+        <div class="item-title">
+          <%= post.title %>
+        </div>
+        <p><%= post.comment %></p>
       </div>
-    </li>
-  </ul>
+    </div>
   <% end %>
 </div>

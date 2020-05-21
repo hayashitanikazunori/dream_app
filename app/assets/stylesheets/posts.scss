@@ -18,23 +18,34 @@ h1 {
   text-align: center;
 }
 
-.content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 8em
+.items {
+  margin: 30px 300px 0 300px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
-
-ul{
-  width: 352px;
-  list-style: none outside;
-  }
-
-  li{
+.items .item {
+  width: 40%;
+}
+.item {
+  border: solid 1px #c7c5c5;
+  padding: 5px 0;
+  height: 300px;
+}
+.item-image {
   padding: 0;
-  float: left;
-  width: 176px;
-  }
-
-.image {
-  width: 200px;
-  }
+}
+.item-body {
+  padding: 5px 0;
+}
+.item-title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+}
+.item-body p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
