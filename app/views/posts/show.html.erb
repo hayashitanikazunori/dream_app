@@ -1,0 +1,14 @@
+<h1>詳細画面</h2>
+<div class="show-itmes">
+  <div class="show-image">
+    <%= image_tag @post.image, size: '400x400' %>
+  </div>
+  <div class="show-body">
+    <div class="show-title">
+      <%= @post.title %>
+    </div>
+    <p><%= @post.comment %></p>
+    <%= link_to "編集", edit_post_path(@post.id) %>
+    <%= link_to "削除", post_path(@post.id), method: :delete %>
+  </div>
+</div>

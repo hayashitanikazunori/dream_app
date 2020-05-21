@@ -17,7 +17,7 @@ class PostsController < ApplicationController
       flash[:notice] = "投稿しました"
       redirect_to "/posts" 
     else
-      flash.now[:aert] = "投稿に失敗しました"
+      flash.now[:alert] = "投稿に失敗しました"
       render("posts/new")
     end
   end
@@ -29,7 +29,18 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update params.require(:post).permit(:comment, image: [])
-    redirect_to "/posts"
+    redirect_to "/posts/#{params[:id]}"
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      flash[:notice] = "削除しました"
+      redirect_to "/posts"
+    else
+      flash.now[:alert] = "削除に失敗しました"
+      render("posts/#{params[:id]}")
+    end
   end
 
   private

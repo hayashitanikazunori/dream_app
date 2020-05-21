@@ -1,10 +1,2 @@
 <h1>新規投稿画面</h2>
-<%= form_with model: @post, local: true do |f| %>
-  <%= f.label :title, "タイトル" %><br>
-  <%= f.text_field :title %><br>
-  <%= f.label :title, "写真" %><br>
-  <%= f.file_field :image %><br>
-  <%= f.label :title, "コメント" %><br>
-  <%= f.text_area :comment %><br>
-  <%= f.submit %>
-<% end %>
+<%= render "form" %>
