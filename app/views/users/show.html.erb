@@ -1,4 +1,19 @@
-<h1>Users#show</h1>
+<h1>ユーザー画面</h1>
 
-<p><%= @user.name %></p>
-<p><%= @user.age %></p>
+<div class="s-container">
+  <div class="label">
+    <p><%= @user.name %></p>
+  </div>
+  <div class="label">
+    <p><%= @user.age %></p>
+  </div>
+  <div class="label">
+    <p><%= @user.email %></p>
+  </div>
+  <div class="label">
+    <p><%= @user.tel %></p>
+  </div>
+  <div class="back">
+    <%= link_to "戻る", "/" %>
+  </div>
+</div>

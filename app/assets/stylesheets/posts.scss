@@ -21,6 +21,7 @@ h1 {
 .items {
   margin: 30px 300px 0 300px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   text-align: center;
 }
@@ -28,14 +29,14 @@ h1 {
   width: 40%;
 }
 .item {
+  height: 500px;
+  width: 50%;
+  box-sizing: border-box;
   border: solid 1px #c7c5c5;
   padding: 5px 0;
-  height: 300px;
 }
 .item-image {
   display: inline-block;
-  width: 400px;
-  height: 400px;
   padding: 0;
 }
 .item-body {
@@ -52,9 +53,10 @@ h1 {
   font-weight: 400;
   color: #333;
 }
-// show page edit
+// show page css
 .show-itmes {
-  margin: 30px 40px 0 40px;
+  margin: 30px 40px 50px 40px;
+  padding-left: 50px;
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -79,4 +81,30 @@ h1 {
   font-size: 16px;
   font-weight: 400;
   color: #333;
+}
+
+// new and edit page css
+.ne-container {
+  margin: 50px 400px 20px 400px;
+  padding: 0 100px 0 50px;
+}
+.title {
+  font-size: 25px;
+}
+.picture {
+  font-size: 25px;
+  margin-top: 30px;
+}
+.comment {
+  font-size: 25px;
+  margin-top: 30px;
+}
+.submit {
+  font-size: 25px;
+  margin-top: 30px;
+}
+.back {
+  font-size: 20px;
+  margin-top: 20px;
+  float: right;
 }

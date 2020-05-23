@@ -1,11 +1,22 @@
-<%= form_with model: @post, local: true do |f| %>
-  <%= f.label :title, "タイトル" %><br>
-  <%= f.text_field :title %><br>
-  <%= f.label :title, "写真" %><br>
-  <%= f.file_field :image %><br>
-  <%= f.label :title, "コメント" %><br>
-  <%= f.text_area :comment %><br>
-  <%= f.submit "送信" %>
-<% end %>
-
-<%= link_to "戻る", "/posts" %>
+<div class="ne-container">
+  <%= form_with model: @post, local: true do |f| %>
+    <div class="title">
+      <%= f.label :title, "タイトル" %><br>
+      <%= f.text_field :title %><br>
+    </div>
+    <div class="picture">
+      <%= f.label :title, "写真" %><br>
+      <%= f.file_field :image %><br>
+    </div>
+    <div class="comment">
+      <%= f.label :title, "コメント" %><br>
+      <%= f.text_area :comment %><br>
+    </div>
+    <div class="submit">
+      <%= f.submit "投稿する" %>
+    </div>
+  <% end %>
+  <div class="back">
+    <%= link_to "戻る", "/posts" %>
+  </div>
+</div>
