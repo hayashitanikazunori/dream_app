@@ -15,6 +15,7 @@
         <p><%= post.comment %></p>
       </div>
       <%= link_to "詳細", "/posts/#{post.id}" %>
+      <%= post.user.age %>
     </div>
   <% end %>
 </div>

@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
+before_action :authenticate_user!, only: [:new, :edit, :destroy, :update, :create]
+
   def index
     @posts = Post.all
+    # @user = User.find(id: @posts.user_id)
   end
 
   def new
@@ -13,6 +16,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
       flash[:notice] = "投稿しました"
       redirect_to "/posts" 
