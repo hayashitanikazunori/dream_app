@@ -1,3 +1,26 @@
 // Place all the styles related to the dreams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-container {
+  height: 700px;
+  background-image: image-url('top.png');
+  background-size: 100% 700px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.home-container h1 {
+  padding-top:90px;
+  font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
+  font-size: 80px;
+  color: rgb(143, 248, 44);
+}
+
+.home-container h2 {
+  padding-top: 8px;
+  font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
+  font-size: 30px;
+  letter-spacing: 10px;
+  color: rgb(0, 0, 0);
+}
