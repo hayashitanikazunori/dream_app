@@ -43,8 +43,12 @@
     </ul>
   </div>
 </nav>
-    <p><%= notice %></p>
-    <p><%= alert %></p>
+<%# flashメソッドが発動時にcssが適用されるようにする %>
+<% space_css = flash[:notice] ? "flash" : "" %>
+<div class='<%= space_css %>'>
+  <%= notice %>
+  <%= alert %>
+</div>
     <%= yield %>
   </body>
 </html>

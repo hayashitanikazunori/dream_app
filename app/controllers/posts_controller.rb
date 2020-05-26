@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
 before_action :authenticate_user!, only: [:new, :edit, :destroy, :update, :create]
+before_action :current_uzer_authenticate, only: [:edit, :destroy, :update]
 
   def index
     @posts = Post.all
-    # @user = User.find(id: @posts.user_id)
   end
 
   def new
@@ -50,5 +50,13 @@ before_action :authenticate_user!, only: [:new, :edit, :destroy, :update, :creat
   private
   def post_params
     params.require(:post).permit(:title, :image, :comment)
+  end
+
+  def current_uzer_authenticate
+    @post = Post.find(params[:id])
+    if @post.user_id != current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to("/posts")
+    end
   end
 end
