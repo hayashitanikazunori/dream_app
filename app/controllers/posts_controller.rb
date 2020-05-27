@@ -12,6 +12,7 @@ before_action :current_uzer_authenticate, only: [:edit, :destroy, :update]
 
   def show
     @post = Post.find(params[:id])
+    @favolite = User.like(params[:id])
   end
 
   def create
@@ -45,6 +46,10 @@ before_action :current_uzer_authenticate, only: [:edit, :destroy, :update]
       flash.now[:alert] = "削除に失敗しました"
       render("posts/#{params[:id]}")
     end
+  end
+
+  def favorite_create
+    @favolite.save(current_user)
   end
 
   private

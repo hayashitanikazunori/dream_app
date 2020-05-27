@@ -1,12 +1,17 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.posts-container {
+  margin: 30px 300px 0 300px;
+}
 
 h1 {
   text-align: center;
-  color: #00AA00
+  color: #00AA00;
+  font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
+  letter-spacing: 10px;
+  font-size: 70px;
 }
-
 
 .new {
   width: 150px;
@@ -14,46 +19,81 @@ h1 {
 }
 
 .new-btn {
-  margin-top: 30px;
+  margin-top: 70px;
   text-align: center;
 }
 
+.btn {
+  width: 200px;
+}
+
 .items {
-  margin: 30px 300px 0 300px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: center;
+  margin-top: 30px;
 }
+
 .items .item {
   width: 40%;
 }
+
 .item {
-  height: 500px;
-  width: 50%;
+  margin-top: 10px;
+  height: 450px;
   box-sizing: border-box;
-  border: solid 1px #c7c5c5;
+  border: solid 2px #c7c5c5;
   padding: 5px 0;
 }
+
 .item-image {
   display: inline-block;
-  padding: 0;
+  padding-top: 15px;
 }
+
 .item-body {
-  padding: 5px 0;
+  padding: 5px 60px;
+  margin: 0;
+  text-align: left;
 }
-.item-title {
-  margin: 0 0 8px;
-  font-size: 20px;
-  font-weight: 700;
-  color: #000000;
+
+.item-body h3 {
+  font-size: 17px;
+  font-weight: 600;
 }
+
 .item-body p {
-  font-size: 16px;
-  font-weight: 400;
-  color: #333;
+  margin-bottom: 0;
+  font-size: 15px;
 }
-// show page css
+
+.item-label{
+  padding-bottom: 5px;
+  font-size: 10px;
+}
+
+.item-title {
+  margin: 0;
+  padding-top: 5px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.item-comment {
+  padding-top: 5px;
+}
+
+.item-age {
+  padding-top: 5px;
+  font-size: 10px;
+}
+
+.item-show{
+  text-align: right;
+}
+
+// showページのcss
 .show-itmes {
   margin: 30px 40px 50px 40px;
   padding-left: 50px;
@@ -83,7 +123,7 @@ h1 {
   color: #333;
 }
 
-// new and edit page css
+// 新規投稿、編集のcss
 .ne-container {
   margin: 50px 400px 20px 400px;
   padding: 0 100px 0 50px;
@@ -102,9 +142,4 @@ h1 {
 .submit {
   font-size: 25px;
   margin-top: 30px;
-}
-.back {
-  font-size: 20px;
-  margin-top: 20px;
-  float: right;
 }

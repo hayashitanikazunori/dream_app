@@ -1,21 +1,32 @@
-<h1>投稿一覧</h1>
-<div class="new-btn">
-  <button type="button" class="btn new btn-secondary" onclick="location.href='/posts/new'">新規投稿</button>
-</div>
-<div class="items">
-  <% @posts.each do |post| %>
-    <div class="item">
-      <div class="item-image">
-        <%= image_tag post.image, size: '200x200' %>
-      </div>
-      <div class="item-body">
-        <div class="item-title">
-          <%= post.title %>
+<div class="posts-container">
+  <h1>投稿一覧</h1>
+  <div class="new-btn">
+    <button type="button" class="btn new btn-secondary" onclick="location.href='/posts/new'">新規投稿</button>
+  </div>
+  <div class="items">
+    <% @posts.each do |post| %>
+      <div class="item">
+        <div class="item-image">
+          <%= image_tag post.image, size: '200x200' %>
         </div>
-        <p><%= post.comment %></p>
+        <div class="item-body">
+          <div class="item-title">
+            <p class="item-label">タイトル</p>
+            <h3><%= post.title %></h3>
+          </div>
+          <div class="item-comment">
+            <p class="item-label">コメント</p>
+            <h3><%= post.comment %></h3>
+          </div>
+          <div class="item-age">
+            <p><%= post.user.age %>歳</p>
+          </div>
+            <div class="item-show">
+              <%= link_to "詳細をみる", "/posts/#{post.id}" %>
+            </div>
+          </div>
+
       </div>
-      <%= link_to "詳細", "/posts/#{post.id}" %>
-      <%= post.user.age %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
