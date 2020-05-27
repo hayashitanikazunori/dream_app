@@ -1,10 +1,12 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :favorites
-  has_many :users, through: :favorites
+  # 投稿が誰にいいねされているかが簡単に取得できる
+  has_many :favorited_users, through: :favorites, source: :user
   has_one_attached :image
-  validates :title, presence: true, length: { maximum: 50 }
-  validates :comment, presence: true, length: { maximum: 100 }
+
+  validates :title, presence: true, length: { maximum: 20 }
+  validates :comment, presence: true, length: { maximum: 50 }
   validate :image_presence
 
   def image_presence

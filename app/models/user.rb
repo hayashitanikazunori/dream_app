@@ -3,18 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :posts
-  has_many :favorites
-  has_many :fav_posts, through: :favorites, source: :post
+  has_many :posts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  # userがどの投稿に応援しているか簡単に取得できる
+  has_many :favorited_posts, through: :favolites, source: :post
   
   # postモデル関連付け
   def posts
     return Post.where(user_id: self.id)
-  end
-
-  # 応援機能のメソッド
-  def like(post)
-    favorites.find_or_create_by(post_id: :post.id)
   end
 
   def unlike(post)
