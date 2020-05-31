@@ -4,6 +4,7 @@ before_action :current_uzer_authenticate, only: [:edit, :destroy, :update]
 
   def index
     @posts = Post.all
+    @favorites = Favorite.new
   end
 
   def new
@@ -12,7 +13,6 @@ before_action :current_uzer_authenticate, only: [:edit, :destroy, :update]
 
   def show
     @post = Post.find(params[:id])
-    @favolite = User.like(params[:id])
   end
 
   def create
@@ -32,13 +32,13 @@ before_action :current_uzer_authenticate, only: [:edit, :destroy, :update]
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.find_by(params[:id])
     @post.update params.require(:post).permit(:comment, image: [])
     redirect_to "/posts/#{params[:id]}"
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.find_by(params[:id])
     if @post.destroy
       flash[:notice] = "削除しました"
       redirect_to "/posts"
@@ -46,10 +46,6 @@ before_action :current_uzer_authenticate, only: [:edit, :destroy, :update]
       flash.now[:alert] = "削除に失敗しました"
       render("posts/#{params[:id]}")
     end
-  end
-
-  def favorite_create
-    @favolite.save(current_user)
   end
 
   private

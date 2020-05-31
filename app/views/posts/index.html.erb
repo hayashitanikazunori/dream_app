@@ -21,11 +21,22 @@
           <div class="item-age">
             <p><%= post.user.age %>歳</p>
           </div>
-            <div class="item-show">
-              <%= link_to "詳細をみる", "/posts/#{post.id}" %>
-            </div>
+          <div class="item-show">
+            <%= link_to "詳細をみる", "/posts/#{post.id}" %>
           </div>
-
+          <div class="favorite-count">
+            応援された件数: <%= post.favorites.count %>
+          </div>
+          <div class="favorite">
+          <% if user_signed_in? %>
+            <% if current_user.already_favorited?(post) %>
+              <%= button_to '応援を取り消す', post_favorite_path(post.id, current_user.id), method: :delete %>
+            <% else %>
+              <%= button_to '応援！', post_favorites_path(post.id, current_user.id) %>
+            <% end %>
+          <% end %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
