@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :favorites, dependent: :destroy
+  has_many :favolites, dependent: :destroy
   # 投稿が誰にいいねされているかが簡単に取得できる
-  has_many :favorited_users, through: :favorites, source: :user
+  has_many :favolited_users, through: :favolites, source: :user
   has_one_attached :image
 
   validates :title, presence: true, length: { maximum: 20 }

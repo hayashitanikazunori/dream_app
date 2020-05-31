@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show]
   resources :posts do
-    resources :favorites, only: [:create, :destroy]
+    resources :favolites, only: [:create, :destroy]
   end
   root to: 'dreams#home'
 end

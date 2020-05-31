@@ -4,7 +4,7 @@ before_action :current_uzer_authenticate, only: [:edit, :destroy, :update]
 
   def index
     @posts = Post.all
-    @favorites = Favorite.new
+    @favolites = Favolite.new
   end
 
   def new

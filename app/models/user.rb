@@ -4,13 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :posts, dependent: :destroy
-  has_many :favorites, dependent: :destroy
+  has_many :favolites, dependent: :destroy
   # userがどの投稿に応援しているか簡単に取得できる
-  has_many :favorited_posts, through: :favolites, source: :post
+  has_many :favolited_posts, through: :favolites, source: :post
   
   # すでにいいねをしているかどうかを判定する
-  def already_favorited?(post)
-    self.favorites.exists?(post_id: post.id)
+  def already_favolited?(post)
+    self.favolites.exists?(post_id: post.id)
   end
 
   # postモデル関連付け
