@@ -1,7 +1,7 @@
 <div class="posts-container">
-  <h1>投稿一覧</h1>
+  <h1>everyone’s dream</h1>
   <div class="new-btn">
-    <button type="button" class="btn new btn-secondary" onclick="location.href='/posts/new'">新規投稿</button>
+    <button type="button" class="btn new btn-secondary" onclick="location.href='/posts/new'">投稿する!</button>
   </div>
   <div class="items">
     <% @posts.each do |post| %>
@@ -19,18 +19,20 @@
             <h3><%= post.comment %></h3>
           </div>
           <div class="item-age">
-            <p><%= post.user.age %>歳</p>
+            <h3><%= post.user.age %>歳</h3>
           </div>
           <div class="item-show">
             <%= link_to "詳細をみる", "/posts/#{post.id}" %>
           </div>
           <div class="favolite-count">
-            応援された件数: <%= post.favolites.count %>
+          <% if user_signed_in? %>
+            <% if post.user_id == current_user.id %>
+              応援数「 <%= post.favolites.count %> 」
+            <% end %>
           </div>
           <div class="favolite">
-          <% if user_signed_in? %>
             <% if current_user.already_favolited?(post) %>
-              <%= button_to '応援を取り消す', post_favolite_path(post.id, current_user.id), method: :delete %>
+              <%= button_to '取り消す', post_favolite_path(post.id, current_user.id), method: :delete %>
             <% else %>
               <%= button_to '応援！', post_favolites_path(post.id, current_user.id) %>
             <% end %>

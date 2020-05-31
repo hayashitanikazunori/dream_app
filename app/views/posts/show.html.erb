@@ -1,4 +1,3 @@
-<h1>詳細画面</h2>
 <div class="show-itmes">
   <div class="show-image">
     <%= image_tag @post.image, size: '400x400' %>
@@ -7,13 +6,20 @@
     <div class="show-title">
       <%= @post.title %>
     </div>
-    <p><%= @post.comment %></p>
-    <% if user_signed_in? %>
-      <% if @post.user_id == current_user.id %>
-        <%= link_to "編集", edit_post_path(@post.id) %>
-        <%= link_to "削除", post_path(@post.id), method: :delete %>
-      <% end %>
-    <% end %>
+    <div class="show-comment">
+      <p><%= @post.comment %></p>
+    </div>
+      <% if user_signed_in? %>
+        <% if @post.user_id == current_user.id %>
+          <div class ="show-favolite-count">
+            応援数「 <%= @post.favolites.count %> 」
+          </div>
+          <div class="show-links">
+            <%= link_to "編集", edit_post_path(@post.id) %>
+            <%= link_to "削除", post_path(@post.id), method: :delete %>
+          </div>
+        <% end %>
+      <%end %>
     <%= link_to "戻る", "/posts" %>
   </div>
 </div>

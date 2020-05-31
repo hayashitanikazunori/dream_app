@@ -9,8 +9,8 @@ h1 {
   text-align: center;
   color: #00AA00;
   font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
-  letter-spacing: 10px;
-  font-size: 70px;
+  letter-spacing: 15px;
+  font-size: 85px;
 }
 
 .new {
@@ -70,14 +70,12 @@ h1 {
 
 .item-label{
   padding-bottom: 5px;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 .item-title {
   margin: 0;
   padding-top: 5px;
-  font-size: 18px;
-  font-weight: 700;
 }
 
 .item-comment {
@@ -93,34 +91,56 @@ h1 {
   text-align: right;
 }
 
+.favolite-count {
+  padding-top: 5px;
+  float: left;
+}
+
+.favolite {
+  padding-top: 5px;
+  float: right;
+}
+
 // showページのcss
 .show-itmes {
-  margin: 30px 40px 50px 40px;
+  margin: 100px 40px 50px 40px;
   padding-left: 50px;
   display: flex;
   flex-direction: row;
   text-align: center;
 }
 .show-image {
-  border: solid 1px rgb(0, 255, 0);
   padding: 0;
 }
 .show-body {
-  border: solid 2px rgb(216, 26, 26);
   width: 600px;
-  margin: 0 20px;
-  padding: 5px 0;
+  margin: 0 20px 0 60px;
+  padding: 20px 0 5px 0;
 }
 .show-title {
   text-align: center;
-  font-size: 20px;
+  letter-spacing: 10px;
+  font-size: 40px;
   font-weight: 700;
   color: #000000;
 }
 .show-body p {
-  font-size: 16px;
+  padding-top: 20px;
   font-weight: 400;
   color: #333;
+}
+
+.show-comment {
+  font-size: 35px;
+}
+
+.show-favolite-count {
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.show-links {
+  padding-top: 10px;
 }
 
 // 新規投稿、編集のcss
