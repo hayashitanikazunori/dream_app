@@ -109,14 +109,17 @@ h1 {
   flex-direction: row;
   text-align: center;
 }
+
 .show-image {
   padding: 0;
 }
+
 .show-body {
   width: 600px;
   margin: 0 20px 0 60px;
   padding: 20px 0 5px 0;
 }
+
 .show-title {
   text-align: center;
   letter-spacing: 10px;
@@ -124,6 +127,7 @@ h1 {
   font-weight: 700;
   color: #000000;
 }
+
 .show-body p {
   padding-top: 20px;
   font-weight: 400;
@@ -164,7 +168,7 @@ h1 {
   margin-top: 30px;
 }
 
-レスポンシブデザイン設定途中
+// レスポンシブデザイン設定途中
 // @media (max-width: 400px ) {
 //   .items {
 //     padding: 0;

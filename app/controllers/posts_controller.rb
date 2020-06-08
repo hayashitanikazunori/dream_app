@@ -33,7 +33,7 @@ before_action :current_uzer_authenticate, only: [:edit, :destroy, :update]
 
   def update
     @post = Post.find_by(params[:id])
-    @post.update params.require(:post).permit(:comment, image: [])
+    @post.update(post_params)
     redirect_to "/posts/#{params[:id]}"
   end
 
